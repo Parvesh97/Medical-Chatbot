@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Chatbot</title>
+    <style>
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Image Styling */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('AI-Chatbots-For-Healthcare.-scaled.webp'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 0.5s ease; /* Smooth transition */
+            opacity: 1; /* Full opacity initially */
+        }
+
+        /* Make background slightly transparent on hover over body only */
+        body:hover::before {
+            opacity: 0.7; /* Adjust this value to control transparency on hover */
+        }
+
+        /* Chatbot container styling */
+        .chatbot-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 0.8s ease forwards;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for darkening */
+            color: #333; /* Initial text color */
+        }
+
+        /* Darken chatbot container and change text color to white on hover */
+        .chatbot-container:hover {
+            background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+            color: #fff; /* Change text color to white */
+        }
+
+        /* Prevent background hover effect when hovering over chatbot container */
+        body:not(:hover) .chatbot-container:hover {
+            background-color: rgba(0, 0, 0, 0.6); /* Darken container */
+            color: #fff; /* Change text color to white */
+        }
+
+        /* Slide-down animation */
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #0073e6;
+            transition: color 0.3s ease; /* Smooth transition for text color */
+        }
+
+        p {
+            color: #333;
+            transition: color 0.3s ease; /* Smooth transition for text color */
+        }
+
+        /* Change heading and paragraph text color to white on hover */
+        .chatbot-container:hover h1,
+        .chatbot-container:hover p {
+            color: #fff; /* Set text color to white */
+        }
+
+        /* Chatbot button styling */
+        .open-chatbot-btn {
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        }
+
+        /* Change button background and text color on hover */
+        .chatbot-container:hover .open-chatbot-btn {
+            background-color: #005bb5;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <h1>Welcome to the Medical Chatbot</h1>
+        <p>We're here to help you with your health-related queries.</p>
+        <button class="open-chatbot-btn" onclick="window.openCXGenieChatWidget()">Chat with us</button>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script src="https://widget.cxgenie.ai/widget.js" data-aid="6ae8585f-21c6-4fe0-865c-1df42a6d9e8e"
+		
+		 data-lang="en"></script>
+</body>
+</html>
